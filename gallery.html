@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Camille's Gallery</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@600&family=Poppins:wght@300;500&display=swap" rel="stylesheet" />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(180deg, #ffe6ec, #fff5f8);
+      color: #7a003b;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      color: #b30059;
+      font-size: 2em;
+      margin-bottom: 25px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 15px;
+      max-width: 800px;
+      width: 100%;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 15px;
+      border: 2px solid #d4af37;
+      box-shadow: 0 2px 10px rgba(255, 215, 0, 0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    .back-btn {
+      display: inline-block;
+      background: #d4af37;
+      color: white;
+      padding: 12px 25px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 30px;
+      transition: 0.3s ease;
+    }
+
+    .back-btn:hover {
+      background: #b30059;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Camille's Gallery</h1>
+  <div class="gallery">
+    <img src="https://via.placeholder.com/300x200?text=Photo+1" alt="Gallery Photo 1">
+    <img src="https://via.placeholder.com/300x200?text=Photo+2" alt="Gallery Photo 2">
+    <img src="https://via.placeholder.com/300x200?text=Photo+3" alt="Gallery Photo 3">
+    <img src="https://via.placeholder.com/300x200?text=Photo+4" alt="Gallery Photo 4">
+    <img src="https://via.placeholder.com/300x200?text=Photo+5" alt="Gallery Photo 5">
+    <img src="https://via.placeholder.com/300x200?text=Photo+6" alt="Gallery Photo 6">
+  </div>
+
+  <a href="index.html" class="back-btn">← Back to Invitation</a>
+
+</body>
+</html>

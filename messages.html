@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Messages for Camille</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@600&family=Poppins:wght@300;500&display=swap" rel="stylesheet" />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(180deg, #ffe6ec, #fff5f8);
+      color: #7a003b;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      padding: 30px 15px;
+      opacity: 0;
+      transition: opacity 0.8s ease-in-out;
+    }
+
+    body.fade-in { opacity: 1; }
+
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3em;
+      color: #b30059;
+      margin-bottom: 5px;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2em;
+      color: #7a003b;
+      margin-bottom: 25px;
+    }
+
+    .messages-container {
+      width: 100%;
+      max-width: 650px;
+      background: rgba(255, 255, 255, 0.96);
+      border: 2px solid #d4af37;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+      padding: 25px;
+      overflow-y: auto;
+      max-height: 65vh;
+      margin-bottom: 25px;
+      animation: fadeInUp 1.2s ease;
+    }
+
+    .message {
+      background-color: #fff8fa;
+      border-left: 4px solid #d4af37;
+      border-radius: 10px;
+      padding: 15px 20px;
+      margin-bottom: 15px;
+      text-align: left;
+      color: #4a0029;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      animation: fadeInUp 0.8s ease;
+    }
+
+    .message strong {
+      color: #b30059;
+      font-weight: 600;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .message-input {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      width: 100%;
+      max-width: 650px;
+      background: rgba(255, 255, 255, 0.96);
+      border: 2px solid #d4af37;
+      border-radius: 20px;
+      box-shadow: 0 0 10px rgba(255, 215, 0, 0.25);
+      padding: 20px;
+    }
+
+    input, textarea {
+      border: 1px solid #d4af37;
+      border-radius: 10px;
+      padding: 10px 12px;
+      font-family: 'Poppins', sans-serif;
+      resize: none;
+      font-size: 0.95em;
+      color: #4a0029;
+      width: 100%;
+    }
+
+    textarea {
+      height: 100px;
+    }
+
+    .send-btn, .back-btn {
+      background: #d4af37;
+      color: white;
+      padding: 12px 25px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+      letter-spacing: 1px;
+      border: none;
+      cursor: pointer;
+      transition: 0.3s ease;
+      font-size: 0.9em;
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .send-btn:hover, .back-btn:hover {
+      background: #b30059;
+      transform: scale(1.05);
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin-top: 25px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Messages</h1>
+  <h2>Leave your love and wishes for Camille 💕</h2>
+
+  <div class="messages-container" id="messageList"></div>
+
+  <div class="message-input">
+    <input type="text" id="nameInput" placeholder="Your name..." />
+    <textarea id="newMessage" placeholder="Write your message here..."></textarea>
+    <button class="send-btn" id="sendMessage">💌 Send Message</button>
+  </div>
+
+  <a href="index.html" class="back-btn">← Back to Invitation</a>
+
+  <script>
+    // Fade in animation
+    window.addEventListener("DOMContentLoaded", () => {
+      document.body.classList.add("fade-in");
+      loadMessages();
+    });
+
+    // Load saved messages from localStorage
+    function loadMessages() {
+      const storedMessages = JSON.parse(localStorage.getItem("messages")) || [];
+      const messageList = document.getElementById("messageList");
+      messageList.innerHTML = "";
+      storedMessages.forEach(msg => {
+        const newDiv = document.createElement("div");
+        newDiv.classList.add("message");
+        newDiv.innerHTML = `<strong>${msg.name}:</strong> ${msg.text}`;
+        messageList.appendChild(newDiv);
+      });
+    }
+
+    // Send new message
+    document.getElementById("sendMessage").addEventListener("click", () => {
+      const name = document.getElementById("nameInput").value.trim() || "Guest";
+      const text = document.getElementById("newMessage").value.trim();
+
+      if (text === "") return;
+
+      const newMessage = { name, text };
+      const storedMessages = JSON.parse(localStorage.getItem("messages")) || [];
+      storedMessages.push(newMessage);
+      localStorage.setItem("messages", JSON.stringify(storedMessages));
+
+      const messageList = document.getElementById("messageList");
+      const newDiv = document.createElement("div");
+      newDiv.classList.add("message");
+      newDiv.innerHTML = `<strong>${name}:</strong> ${text}`;
+      messageList.appendChild(newDiv);
+
+      document.getElementById("newMessage").value = "";
+      document.getElementById("nameInput").value = "";
+      messageList.scrollTop = messageList.scrollHeight;
+    });
+  </script>
+</body>
+</html>
