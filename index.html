@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Debut Invitation</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: url('Self_Photo_Studio_1761202803596_color.png') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      backdrop-filter: brightness(0.6);
+      overflow-y: auto;
+    }
+    
+    .card {
+      background: rgba(0, 0, 0, 0.75);
+      border: 2px solid gold;
+      border-radius: 25px;
+      padding: 40px 50px;
+      text-align: center;
+      box-shadow: 0 0 40px rgba(255, 215, 0, 0.4);
+      width: 700px;
+      animation: fadeIn 1.5s ease;
+      margin: 50px 0;
+    }
+    
+    h1 {
+      color: gold;
+      font-size: 2.8em;
+      margin-bottom: 10px;
+      font-family: 'Playfair Display', serif;
+    }
+    
+    h2 {
+      color: silver;
+      font-weight: 300;
+      font-size: 1.4em;
+      margin-bottom: 20px;
+    }
+    
+    p {
+      color: white;
+      font-size: 1.1em;
+      line-height: 1.6em;
+    }
+    
+    .section-title {
+      color: gold;
+      margin-top: 30px;
+      font-size: 2em;
+      font-family: 'Great Vibes', cursive;
+      letter-spacing: 1px;
+    }
+    
+    .roses-list,
+    ol {
+      display: block;
+      text-align: left;
+      color: silver;
+      font-size: 1.05em;
+      line-height: 1.8em;
+      margin: 10px auto 25px auto;
+      padding-left: 20px;
+    }
+    
+    .roses-list {
+      display: inline-block;
+    }
+    
+    .invite-btn {
+      display: inline-block;
+      background: gold;
+      color: black;
+      padding: 14px 30px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      letter-spacing: 1px;
+      margin-top: 25px;
+      box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .invite-btn::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, white, transparent);
+      transition: 0.5s;
+    }
+    
+    .invite-btn:hover::before {
+      left: 100%;
+    }
+    
+    .invite-btn:hover {
+      transform: scale(1.05);
+      background: silver;
+    }
+    
+    .invite-btn:active {
+      background: maroon;
+      color: white;
+    }
+    
+    .message {
+      display: none;
+      margin-top: 15px;
+      font-size: 1.1em;
+      color: gold;
+      animation: fadeIn 0.6s ease;
+    }
+    
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  
+  <div class="card">
+    <h1>You're Invited!</h1>
+    <h2>to the 18th Debut of</h2>
+    <h1 style="color: maroon;">✨ Camille Ganancial ✨</h1>
+    
+    <p>Please join us as we celebrate Camille’s special day filled with elegance, love, and cherished moments.</p>
+    
+    <p><strong>Date:</strong> February 28, 2026<br>
+      <strong>Time:</strong> 6:00 PM<br>
+      <strong>Location:</strong> Sta. Maria, Dalan Matua
+    </p>
+    
+    <!-- 18 Roses -->
+    <div class="section-title">💐 18 Roses</div>
+    <ol class="roses-list">
+      <li>Daddy</li>
+      <li>Angel Charles Ganancial</li>
+      <li>Carl Louise Ganancial</li>
+      <li>Kian Ruzell Napao</li>
+      <li>Rhyane Jireh Napao</li>
+      <li>Matt Jhyrell Confesor</li>
+      <li>Matt Jerich Confesor</li>
+      <li>Yuan Kieffer Napao</li>
+      <li>Rophie Jorzzelle Napao</li>
+      <li>Rain Jathnail Napao</li>
+      <li>Primo Napao</li>
+      <li></li>
+      <li></li>
+      <li>Jose Fernando Pare</li>
+      <li>Kurt Sean Quiambao</li>
+      <li>Roan Cyrus Napao</li>
+      <li>Christian Daniel Ganancial</li>
+      <li>Kian Vincent Cabrera</li>
+    </ol>
+    
+    <!-- 18 Candles -->
+    <div class="section-title">🕯️ 18 Candles</div>
+    <ol>
+      <li>Jessandra Mae Nemenzo</li>
+      <li>Marian Ocampo</li>
+      <li>Nathalie Macalino</li>
+      <li>Bea Constantino</li>
+      <li>Trixie Martinez</li>
+      <li>Princess Guzman</li>
+      <li>Shechinah Mallari</li>
+      <li>Kathlyn Muan</li>
+      <li>Gabrielle Sagmit</li>
+      <li>Crystal Dela Cruz</li>
+      <li>Mizuki Matzumoto</li>
+      <li>Kurt Quiambao</li>
+      <li>Marithe Alto</li>
+      <li>Mira Regina Dela Cruz</li>
+      <li>Kian Vincent Cabrera</li>
+      <li>Ligaya Napao</li>
+      <li>Daddy</li>
+      <li>Mommy</li>
+    </ol>
+    
+    <!-- 18 Treasures -->
+    <div class="section-title">🎁 18 Treasures</div>
+    <ol>
+      <li>Yuan Kieffer Napao</li>
+      <li>Jessandra Mae Nemenzo</li>
+      <li>Crystal Dela Cruz</li>
+      <li>Trixie Martinez</li>
+      <li>Bea Constantino</li>
+      <li>Mizuki Matzumoto</li>
+      <li>Mira Regina Dela Cruz</li>
+      <li>Bea Fabian</li>
+      <li>Mikaella Mamangun</li>
+      <li>Shechinah Mallari</li>
+      <li>Lorraine Joy Lipad</li>
+      <li>Eunice Confesor</li>
+      <li>Ramiah Jacey Napao</li>
+      <li>Nicole Arlos</li>
+      <li>Marithe Alto</li>
+      <li>Raicka Estuesta</li>
+      <li>Kian Vincent Cabrera</li>
+      <li>Mommy</li>
+    </ol>
+    
+    <!-- 18 Balloons -->
+    <div class="section-title">🎈 18 Balloons</div>
+    <ol>
+      <li>Daddy</li>
+      <li>Joanalyn Napao</li>
+      <li>Abigail Anne Napao</li>
+      <li>Lorna Confesor</li>
+      <li>Lumen Pesigan</li>
+      <li>Kyerl Confesor</li>
+      <li>Kim Napao</li>
+      <li>Sharina Labonera</li>
+      <li>Jenelle Pangilinan</li>
+      <li>Lorraine Joy Lipad</li>
+      <li>Romeo Napao Jr.</li>
+      <li>Nathalie Macalino</li>
+      <li>Jessandra Mae Nemenzo</li>
+      <li>Carl Louise Ganancial</li>
+      <li>Angel Charles Ganancial</li>
+      <li>Marian Ocampo</li>
+      <li>Kian Vincent Cabrera</li>
+      <li>Mommy</li>
+    </ol>
+    
+    <!-- 18 Blue Bills (empty placeholders) -->
+    <div class="section-title">💵 18 Blue Bills</div>
+    <ol>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+      <li>5</li>
+      <li>6</li>
+      <li>7</li>
+      <li>8</li>
+      <li>9</li>
+      <li>10</li>
+      <li>11</li>
+      <li>12</li>
+      <li>13</li>
+      <li>14</li>
+      <li>15</li>
+      <li>16</li>
+      <li>17</li>
+      <li>18</li>
+    </ol>
+    
+    <!-- RSVP Button -->
+    <div style="margin-top: 40px;">
+      <a href="#" class="invite-btn" id="rsvpBtn">Click to RSVP</a>
+      <div class="message" id="thankYouMsg">🌹 Thank you for confirming! We can’t wait to celebrate with you!</div>
+    </div>
+  </div>
+  
+  <script>
+    const button = document.getElementById('rsvpBtn');
+    const message = document.getElementById('thankYouMsg');
+    
+    button.addEventListener('click', function(e) {
+      e.preventDefault();
+      message.style.display = 'block';
+      button.textContent = 'RSVP Confirmed';
+      button.style.backgroundColor = 'maroon';
+      button.style.color = 'white';
+      button.disabled = true;
+    });
+  </script>
+  
+</body>
+
+</html>
